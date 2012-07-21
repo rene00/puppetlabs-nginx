@@ -1,4 +1,5 @@
   location <%= location %> {
+    try_files $uri = 404;
     include <%= fastcgi_params %>;
     fastcgi_pass <%= fastcgi %>;
     <% unless fastcgi_script == :undef %>
