@@ -14,6 +14,7 @@
 #   [*fastcgi*]        - location of fastcgi (host:port)
 #   [*fastcgi_params*] - optional alternative fastcgi_params file to use
 #   [*fastcgi_script*] - optional SCRIPT_FILE parameter
+#   [*fastcgi_index*]  - fastcgi index file
 #   [*ssl*]            - Indicates whether to setup SSL bindings for this location.
 #   [*option*]         - Reserved for future use
 #
@@ -38,6 +39,7 @@ define nginx::resource::location(
   $fastcgi        = undef,
   $fastcgi_params = '/etc/nginx/fastcgi_params',
   $fastcgi_script = undef,
+  $fastcgi_index  = 'index.php',
   $ssl            = false,
   $option         = undef,
   $location

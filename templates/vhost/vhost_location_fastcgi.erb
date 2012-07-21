@@ -1,6 +1,7 @@
   location <%= location %> {
     try_files $uri = 404;
     include <%= fastcgi_params %>;
+    fastcgi_index <%= fastcgi_index %>;
     fastcgi_pass <%= fastcgi %>;
     <% unless fastcgi_script == :undef %>
     fastcgi_param SCRIPT_FILENAME <%= fastcgi_script %>;
