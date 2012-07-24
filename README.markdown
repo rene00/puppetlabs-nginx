@@ -46,3 +46,18 @@ Add a Proxy Server(s)
      }
    } 
 </pre>
+
+Setup a new virtual host with fastcgi
+
+<pre>
+    node default {
+      class { 'mcollective': }
+      nginx::resource::vhost { 'www.puppetlabs.com':
+        ensure   => present,
+        www_root => '/var/www/www.puppetlabs.com',
+        fastcgi => '127.0.0.1:9000',
+        fastcgi_script => '/var/www/www.puppetlabs.com$fastcgi_script_name',
+		fastcgi_index => 'index.php',
+      }
+    }
+</pre>
