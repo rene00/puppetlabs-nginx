@@ -53,4 +53,6 @@ class nginx::params {
     /(?i-mx:debian|ubuntu)/                    => 'www-data',
     /(?i-mx:fedora|rhel|centos|suse|opensuse)/ => 'nginx',
   }
+
+  $site_enabled_template   = 'nginx/sites_enabled/site_enabled.erb'
 }
