@@ -61,4 +61,8 @@ class nginx::config inherits nginx::params {
     purge   => true,
     recurse => true,
   }
+
+  file { "${nginx::params::nx_conf_dir}/sites-enabled":
+    ensure => directory,
+  }
 }
